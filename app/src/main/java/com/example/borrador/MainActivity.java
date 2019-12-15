@@ -9,6 +9,9 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 
+import java.io.DataOutputStream;
+import java.io.IOException;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -24,14 +27,22 @@ public class MainActivity extends AppCompatActivity {
 
     public void clearPreferences()
     {
-        try { //clearing app data
-            Runtime runtime = Runtime.getRuntime();
-            runtime.exec("adb shell pm clear com.netflix.mediaclient");
-            Log.d("myTag", "borro");
 
-        } catch (Exception e) {
+
+        try {
+            Process p = Runtime.getRuntime().exec("su");
+            DataOutputStream dos = new DataOutputStream(p.getOutputStream());
+            dos.writeBytes("pm clear com.netflix.mediaclient\n");
+            dos.writeBytes("exit\n");
+            dos.flush();
+            dos.close();
+            p.waitFor();
+        } catch (IOException e) {
             e.printStackTrace();
-            Log.d("myTag", "no borro");
-    }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
     }
 }

@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     {
         try { //clearing app data
             Runtime runtime = Runtime.getRuntime();
-            runtime.exec("pm clear com.netflix.mediaclient");
+            runtime.exec("adb shell pm clear com.netflix.mediaclient");
             Log.d("myTag", "borro");
 
         } catch (Exception e) {

@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Borrador</string>
+    <string name="bienvenido">Bienvenido</string>
+    <string name="finalidad">La finalidad de esta aplicación es borrar directamente los datos de usuario registrados en las diferentes apps del sistema de TVstream</string>
+    <string name="iniciar">Empezar</string>
+</resources>

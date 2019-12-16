@@ -8,6 +8,7 @@ import android.content.Intent;
 public class StartActivityOnBootReceiver extends BroadcastReceiver {
 
     @Override
+    //inicio de activodad al arrancar el dispositivo android
     public void onReceive(Context context, Intent intent) {
         if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())) {
             Intent i = new Intent(context, MainActivity.class);

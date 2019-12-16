@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        //llamado de la funcion de limpieza al abrir el app Borrador
         clearPreferences();
     }
 
@@ -30,24 +30,32 @@ public class MainActivity extends AppCompatActivity {
 
 
         try {
+            //adquirir nivel super usuario
             Process p = Runtime.getRuntime().exec("su");
             DataOutputStream dos = new DataOutputStream(p.getOutputStream());
+            //instruccion de borrado mediante nombre de paquete, se puede enviar n cantidad de paquetes
             dos.writeBytes("pm clear com.netflix.mediaclient\n");
             dos.writeBytes("exit\n");
             dos.flush();
             dos.close();
             p.waitFor();
+            //ir atras para minimizar la aplicacion
             moveTaskToBack(true);
+            //cerrar la aplicacion luego de ejecutar el proceso de borrado
             int q = android.os.Process.myPid();
             android.os.Process.killProcess(q);
         } catch (IOException e) {
+            //ir atras para minimizar la aplicacion
             moveTaskToBack(true);
+            //cerrar la aplicacion luego de ejecutar el proceso de borrado
             int q = android.os.Process.myPid();
             android.os.Process.killProcess(q);
             e.printStackTrace();
 
         } catch (InterruptedException e) {
+            //ir atras para minimizar la aplicacion
             moveTaskToBack(true);
+            //cerrar la aplicacion luego de ejecutar el proceso de borrado
             int q = android.os.Process.myPid();
             android.os.Process.killProcess(q);
             e.printStackTrace();

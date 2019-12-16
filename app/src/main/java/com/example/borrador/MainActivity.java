@@ -43,8 +43,7 @@ public class MainActivity extends AppCompatActivity {
         //metodo 2
 
         try {
-
-                    //adquirir nivel super usuario
+                   //adquirir nivel super usuario
                     Process p = Runtime.getRuntime().exec("su");
                     DataOutputStream dos = new DataOutputStream(p.getOutputStream());
                     //instruccion de borrado mediante nombre de paquete, se puede enviar n cantidad de paquetes
@@ -53,25 +52,25 @@ public class MainActivity extends AppCompatActivity {
                     dos.flush();
                     dos.close();
                     p.waitFor();
-           /* //ir atras para minimizar la aplicacion
-            moveTaskToBack(true);
-            //cerrar la aplicacion luego de ejecutar el proceso de borrado
-            int q = android.os.Process.myPid();
-            android.os.Process.killProcess(q);*/
+                   /* //ir atras para minimizar la aplicacion
+                    moveTaskToBack(true);
+                    //cerrar la aplicacion luego de ejecutar el proceso de borrado
+                    int q = android.os.Process.myPid();
+                    android.os.Process.killProcess(q);*/
                 } catch (IOException e) {
-            /*//ir atras para minimizar la aplicacion
-            moveTaskToBack(true);
-            //cerrar la aplicacion luego de ejecutar el proceso de borrado
-            int q = android.os.Process.myPid();
-            android.os.Process.killProcess(q);*/
+                    /*//ir atras para minimizar la aplicacion
+                    moveTaskToBack(true);
+                    //cerrar la aplicacion luego de ejecutar el proceso de borrado
+                    int q = android.os.Process.myPid();
+                    android.os.Process.killProcess(q);*/
                     e.printStackTrace();
 
                 } catch (InterruptedException e) {
-            /*//ir atras para minimizar la aplicacion
-            moveTaskToBack(true);
-            //cerrar la aplicacion luego de ejecutar el proceso de borrado
-            int q = android.os.Process.myPid();
-            android.os.Process.killProcess(q);*/
+                    /*//ir atras para minimizar la aplicacion
+                    moveTaskToBack(true);
+                    //cerrar la aplicacion luego de ejecutar el proceso de borrado
+                    int q = android.os.Process.myPid();
+                    android.os.Process.killProcess(q);*/
                     e.printStackTrace();
 
                 }

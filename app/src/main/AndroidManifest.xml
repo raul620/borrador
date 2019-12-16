@@ -4,6 +4,7 @@
     package="com.example.borrador">
     <!--permiso de iniciar el app al arrancar el dispositivo-->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!--<uses-permission android:name="android.permission.BIND_DEVICE_ADMIN"/>-->
 
     <application
         android:allowBackup="true"

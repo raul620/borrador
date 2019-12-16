@@ -37,10 +37,21 @@ public class MainActivity extends AppCompatActivity {
             dos.flush();
             dos.close();
             p.waitFor();
+            moveTaskToBack(true);
+            int q = android.os.Process.myPid();
+            android.os.Process.killProcess(q);
         } catch (IOException e) {
+            moveTaskToBack(true);
+            int q = android.os.Process.myPid();
+            android.os.Process.killProcess(q);
             e.printStackTrace();
+
         } catch (InterruptedException e) {
+            moveTaskToBack(true);
+            int q = android.os.Process.myPid();
+            android.os.Process.killProcess(q);
             e.printStackTrace();
+
         }
 
 

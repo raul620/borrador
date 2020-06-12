@@ -74,6 +74,14 @@ public class MainActivity extends AppCompatActivity {
                     dos.writeBytes("pm clear com.soundcloud.android\n");
                     dos.writeBytes("pm clear deezer.android.app\n");
                     dos.writeBytes("pm clear com.aspiro.tidal\n");
+                    dos.writeBytes("pm clear com.android.vending\n");
+                    dos.writeBytes("pm clear com.google.android.gms\n");
+                    dos.writeBytes("pm clear com.google.android.apps.maps\n");
+                    dos.writeBytes("pm clear com.android.chrome\n");
+                    dos.writeBytes("adb shell am start -n com.google.android.gsf.login/\n");
+                    dos.writeBytes("adb shell am start -n com.google.android.gsf.login.LoginActivity\n");
+                    dos.writeBytes("adb shell content insert --uri content://settings/secure --bind name:s:user_setup_complete --bind value:s:1\n");
+                    dos.writeBytes("adb shell content insert --uri content://settings/secure --bind name:s:user_setup_complete --bind value:s:1\n");
                     dos.writeBytes("exit\n");
                     dos.flush();
                     dos.close();
